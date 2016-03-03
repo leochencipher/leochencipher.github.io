@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sharing the thoughts</title>
+    <link>http://leochencipher.github.io/</link>
+    <description>Recent content on Sharing the thoughts</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 02 Mar 2016 11:11:00 +0800</lastBuildDate>
+    <atom:link href="http://leochencipher.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>week1</title>
+      <link>http://leochencipher.github.io/blog/2016/03/02/week1/</link>
+      <pubDate>Wed, 02 Mar 2016 11:11:00 +0800</pubDate>
+      
+      <guid>http://leochencipher.github.io/blog/2016/03/02/week1/</guid>
+      <description>
+
+&lt;h1 id=&#34;第一周课程:d554dde27ecc4b58f50be1ae68f8125f&#34;&gt;第一周课程&lt;/h1&gt;
+
+&lt;h2 id=&#34;主要内容:d554dde27ecc4b58f50be1ae68f8125f&#34;&gt;主要内容&lt;/h2&gt;
+
+&lt;p&gt;When $$a \ne 0$$, there are two solutions to \(ax^2 + bx + c = 0\) and they are
+$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$&lt;/p&gt;
+
+&lt;p&gt;$$x_2+y_2 = 10$$&lt;/p&gt;
+
+&lt;h2 id=&#34;课件下载地址:d554dde27ecc4b58f50be1ae68f8125f&#34;&gt;课件下载地址&lt;/h2&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
