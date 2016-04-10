@@ -6,8 +6,174 @@
     <description>Recent content in Posts on Sharing the thoughts</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 10 Apr 2016 16:57:43 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 10 Apr 2016 23:57:43 +0800</lastBuildDate>
     <atom:link href="http://leochencipher.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>midterm</title>
+      <link>http://leochencipher.github.io/blog/2016/04/10/midterm/</link>
+      <pubDate>Sun, 10 Apr 2016 23:57:43 +0800</pubDate>
+      
+      <guid>http://leochencipher.github.io/blog/2016/04/10/midterm/</guid>
+      <description>
+
+&lt;h1 id=&#34;期中考试测试:dc74b92c8112da961d8d46cf82cbad33&#34;&gt;期中考试测试&lt;/h1&gt;
+
+&lt;h2 id=&#34;填空选择题:dc74b92c8112da961d8d46cf82cbad33&#34;&gt;填空选择题&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;设\((a \times b) \cdot c = 2\)，则 \( [(a+b) \times (b+c)] \cdot (c+a) = \)_____________.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;点(2,1,0)到平面 \( 3x+4y+5z = 0 \)的距离 \( d = \)______________.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;设有直线\( L_1: \frac{x-1}{1} = \frac{y-5}{-2} = \frac{z+8}{1}\) 与 \(L_2 : \begin{cases}
+x-y =6 \\
+2y+z =3 \\
+\end{cases}
+\)，则 \(L_1\)与\(L_2\)的夹角为(    ).&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;(A) \(\frac{\pi}{6}\)  (B)   \(\frac{\pi}{4}\)&lt;/p&gt;
+
+&lt;p&gt;&amp;copy; \(\frac{\pi}{3}\)  (D)   \(\frac{\pi}{2}\)&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;二元函数 \( f(x,y) =
+\begin{cases}
+\frac{xy}{x^2+y^2} , &amp;amp; (x,y) \neq (0,0)\\
+0, &amp;amp; (x,y) = (0,0) \\
+\end{cases}
+\)在点(0,0)处(    ).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;(A) 连续、偏导数存在       （B）连续、偏导数不存在&lt;/p&gt;
+
+&lt;p&gt;&amp;copy; 不连续、偏导数存在     （D）不连续、偏导数不存在&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;由方程\(xyz+\sqrt{x^2+y^2+z^2} = \sqrt{2}\)所确定的函数\(z = z(x,y)\)在点\((1,0,-1)\)点处的全微分 \(dz = \) _________ .&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;设函数\(u(x,y) = \varphi(x+y)+\varphi(x-y)+\int_{x-y}^{x+y} \psi(t)dt\)，其中函数\(\varphi\)具有二阶导数，\(\psi\)具有一阶导数，则必有(    ).&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;(A) \(\frac{\partial^2 u}{\partial x^2} = -\frac{\partial^2 u}{\partial y^2}\).&lt;/p&gt;
+
+&lt;p&gt;(B) \(\frac{\partial^2 u}{\partial x^2} = \frac{\partial^2 u}{\partial y^2}\).&lt;/p&gt;
+
+&lt;p&gt;&amp;copy; \(\frac{\partial^2 u}{\partial x \partial y} = \frac{\partial^2 u}{\partial y^2}\).&lt;/p&gt;
+
+&lt;p&gt;(D) \(\frac{\partial^2 u}{\partial x \partial y} = \frac{\partial^2 u}{\partial x^2}\).&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;在曲线\(x= t, y = -t^2, z= t^3\)的所有切线中，与平面\(x+2y+z =4\)平行的切线(   ).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;(A) 只有1条      （B）只有2条    （C）至少有3条    （D）不存在&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;交换二次积分的积分次序: \( \int_{-1}^{0} dy \int_{2}^{1-y} f(x,y)dx = \) ___________.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;设\(f(x,y)\)为连续函数，则\(\int_{0}^{\frac{\pi}{4}} d\theta \int_{0}^{1} f(\rho cos \theta, \rho sin \theta) \rho d\rho \)等于 (     ).&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;(A) \(\int_{0}^{\frac{\sqrt{2}}{2}} dx \int_{x}^{\sqrt{1-x^2}} f(x,y) dy\)&lt;/p&gt;
+
+&lt;p&gt;(B) \(\int_{0}^{\frac{\sqrt{2}}{2}} dx \int_{0}^{\sqrt{1-x^2}} f(x,y) dy\)&lt;/p&gt;
+
+&lt;p&gt;&amp;copy; \(\int_{0}^{\frac{\sqrt{2}}{2}} dy \int_{y}^{\sqrt{1-y^2}} f(x,y) dx\)&lt;/p&gt;
+
+&lt;p&gt;(D) \(\int_{0}^{\frac{\sqrt{2}}{2}} dy \int_{0}^{\sqrt{1-y^2}} f(x,y) dx\)&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;如果函数\(f(x,y)\)满足如下条件中的_______________, 则该函数在点\((x_0,y_0)\)处连续。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;(A) \(\lim_{x \rightarrow x_0}{f(x,y_0)} = f(x_0,y_0)\)且\(\lim_{y \rightarrow y_0}{f(x_0,y)} = f(x_0,y_0)\).&lt;/p&gt;
+
+&lt;p&gt;(B) \(f(x,y)\)在\((x_0,y_0)\)处沿l方向有\(\frac{\partial f}{\partial l}\).&lt;/p&gt;
+
+&lt;p&gt;&amp;copy; \(f(x,y)\)有偏导数\(f_x(x_0,y_0), f_y(x_0,y_0)\)&lt;/p&gt;
+
+&lt;p&gt;(D) \(f(x,y)\)在\((x_0,y_0)\)处可微分。&lt;/p&gt;
+
+&lt;h2 id=&#34;计算题:dc74b92c8112da961d8d46cf82cbad33&#34;&gt;计算题&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;求直线\(l: \frac{x-1}{1} = \frac{y}{1} = \frac{z-1}{1}\)在平面\(\pi: x-y+2z-1=0\)上的投影直线\(l_0\)的方程，并求\(l_0\)绕y轴旋转一周所成曲面的方程。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;设\(y=y(x), z=z(x)\)是由方程\(z=xf(x+y)\)和\(F(x,y,z)=0\)所确定的函数，其中\(f\)和\(F\)分别具有一阶连续导数与一阶连续偏导数，求\(\frac{dz}{dx}\).&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;设\(z=f(xy,\frac{x}{y})+g(\frac{y}{x})\)，其中\(f\)具有二阶连续偏导数，\(g\)具有二阶连续导数，求\(\frac{\partial^2 z}{\partial x \partial y}\).&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;设函数\(z=f(x,y)\)在点\((1,1)\)处可微，且\(f(1,1)=1, \frac{\partial f}{\partial x}\Big| _{(1,1)} = 2, \frac{\partial f}{\partial y}\Big| _{(1,1)} = 3, \varphi(x) = f(x,f(x,x))\). 求\(\frac{d}{dx} \varphi^3(x) \Big| _{x=1}\).&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;求椭圆面\(x^2+2y^2+3z^3 = 21\)上某点M处的切平面\(\pi\)的方程，使\(\pi\)过已知直线\(L: \frac{x-6}{2} = \frac{y-3}{1} = \frac{2z-1}{-2}\).&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;设直线\(l:\begin{cases}
+x+y+b=0 \\
+x+ay-z-3=0 \\
+\end{cases}
+\)在平面\(\Pi\)上，而平面\(\Pi\)与曲面：\(z=x^2+y^2\)相切于点\((1,-2,5)\)，求\(a,b\)之值。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;求曲线\(\begin{cases}
+3x^2+2y^2=12 \\
+z=0 \\
+\end{cases}
+\)绕y轴旋转一周得到的旋转面在点\((0,\sqrt{3},\sqrt{2})\)处的指向外侧的单位法向量。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;计算二重积分\(\iint_{D} e^{max{x^2,y^2}} dxdy\)，其中\(D={(x,y) \Big| 0 \le x \le 1, 0 \le y \le 1}\).&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;计算二重积分\(\iint_{D} y dxdy\)，其中D是由直线\(x=-2, y =0 , y=2\)以及曲线\(x= -\sqrt{2y-y^2}\)所围成的平面区域。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;计算二重积分\(\iint_{D} \frac{\sqrt{x^2+y^2}}{\sqrt{4a^2-x^2-y^2}} d\sigma\)，其中D是由曲线\(y=-a+\sqrt{a^2-x^2} (a \gt 0)\)和直线\(y=-x\)围成的区域。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;设有螺旋线\(x= 2cos t, y = 2sin t, z= \frac{4}{\pi}t\).&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;(1)求出螺旋线上点\(M(\sqrt{2},\sqrt{2},1)\)处的指向朝下的单位切向量\(e_{\tau}\);&lt;/p&gt;
+
+&lt;p&gt;(2)求出螺旋线上点M处的切线方程；&lt;/p&gt;
+
+&lt;p&gt;(3)求函数\(u=x+2y+3z\)在点M处沿方向\(e_{\tau}\)的方向导数。&lt;/p&gt;
+
+&lt;p&gt;12。 求过点\(M(-1,0,4)\)且平行于平面\(3x-4y+z-10 =0\)，又与直线\(\frac{x+1}{1} = \frac{y-3}{1} = \frac{z}{2}\)相交的直线的方程。&lt;/p&gt;
+
+&lt;h2 id=&#34;应用题:dc74b92c8112da961d8d46cf82cbad33&#34;&gt;应用题&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;抛物面\(z=x^2+y^2\)被平面\(x+y+z=1\)截成一椭圆，求这椭圆上的点到原点的最大值和最小值。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;设有一圆板占有平面闭区域\({(x,y)| x^2+y^2 \le 1}\).该原板被加热，以致在点\((x,y)\)的温度是\(T=x^2+2y^2-x\)，求该圆板的最热点和最冷点。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;形状为椭球\(4x^2+y^2+4z^2 \le 16\)的空间探测器进入地球大气层，其表面开始受热，1小时后再探测器的点\((x,y,z)\)处的温度\(T=8x^2+4yz-16z+600\)，求探测器表面最热的点。&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;证明题:dc74b92c8112da961d8d46cf82cbad33&#34;&gt;证明题&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;试用向量证明不等式：
+$$
+\sqrt{a_{1}^2+a_{2}^2+a_{3}^2} \sqrt{b_{1}^2+b_{2}^2+b_{3}^2} \ge |a_{1}b_{1}+a_{2}b_{2}+a_{3}b_{3}|
+$$，其中\(a_{1},b_{1},a_{2},b_{2},a_{3},b_{3}\)为任意实数，并指出等号成立的条件。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;证明极限:
+$$
+\lim_{(x,y) \rightarrow (0,0)} \frac{x+y}{x-y}
+$$不存在。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;证明
+$$
+\lim_{(x,y) \rightarrow (0,0)} \frac{xy}{\sqrt{x^2+y^2}} = 0
+$$&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;选取适当变换证明:
+$$
+\iint_{D} f(ax+by+c) dxdy = 2\int_{-1}^{1} \sqrt{1-u^2}f(u\sqrt{a^2+b^2}+c) du
+$$
+其中\(D={(x,y)|x^2+y^2 \le 1}\)，且\(a^2+b^2 \neq 0 \).&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
     
     <item>
       <title>week6</title>
