@@ -444,6 +444,66 @@ $$
     </item>
     
     <item>
+      <title>homework4</title>
+      <link>http://leochencipher.github.io/blog/2016/03/28/homework4/</link>
+      <pubDate>Mon, 28 Mar 2016 22:38:02 +0800</pubDate>
+      
+      <guid>http://leochencipher.github.io/blog/2016/03/28/homework4/</guid>
+      <description>
+
+&lt;h1 id=&#34;作业4答案:dfa05d43a87fcf4c524c7d73096d4e48&#34;&gt;作业4答案&lt;/h1&gt;
+
+&lt;h2 id=&#34;8-3:dfa05d43a87fcf4c524c7d73096d4e48&#34;&gt;8.3&lt;/h2&gt;
+
+&lt;h3 id=&#34;1-3:dfa05d43a87fcf4c524c7d73096d4e48&#34;&gt;1（3）&lt;/h3&gt;
+
+&lt;p&gt;解：
+$$\frac{\partial z}{\partial x}
+=\frac{1}{\sqrt{x^2+y^2}}-\frac{x\cdot 2x}{2(\sqrt{x^2+y^2})^3}
+=\frac{y^2}{(\sqrt{x^2+y^2})^3}
+$$
+$$\frac{\partial z}{\partial y}
+=-\frac{x\cdot 2y}{2(\sqrt{x^2+y^2})^3}
+=-\frac{xy}{(\sqrt{x^2+y^2})^3}
+$$
+\(\therefore\)函数的全微分为：
+$$
+dz=\frac{y^2}{(\sqrt{x^2+y^2})^3}dx-\frac{xy}{(\sqrt{x^2+y^2})^3}dy
+$$&lt;/p&gt;
+
+&lt;h3 id=&#34;3:dfa05d43a87fcf4c524c7d73096d4e48&#34;&gt;3&lt;/h3&gt;
+
+&lt;p&gt;解：设函数为 \(f(x,y)=\sin{x}\tan{y} \)，
+$$\frac{\partial f}{\partial x}
+=\cos{x}\tan{y},\
+\frac{\partial f}{\partial y}
+=\sin{x}\sec ^2{y}
+$$
+取\(x=30^{\circ},y=45^{\circ},\Delta x=-1^{\circ},\Delta y=1^{\circ} \)，则有
+$$\begin{align}
+\Delta f
+&amp;amp; \approx df =\frac{\partial f}{\partial x}\Delta x+\frac{\partial f}{\partial y}\Delta y\\
+&amp;amp; =\cos{30^{\circ}}\tan{45^{\circ}}(-1^{\circ})+\sin{30^{\circ}}\sec ^2{45^{\circ}}(1^{\circ})\\
+&amp;amp; =\frac{\sqrt{3}}{2}\cdot 1\cdot (-\frac{2\pi}{360})+\frac{1}{2}\cdot(\sqrt{2})^2\cdot(\frac{2\pi}{360})\\
+&amp;amp; =\frac{\pi}{180}(1-\frac{\sqrt{3}}{2})\\
+&amp;amp; \approx \frac{3.14}{180}(1-\frac{1.732}{2})\\
+&amp;amp; \approx 0.0023
+\end{align}
+$$
+$$\therefore
+\sin{29^{\circ}}\tan{46^{\circ}}
+=\sin{30^{\circ}}\tan{45^{\circ}}+\Delta f
+\approx 0.5+0.0023
+=0.5023
+$$&lt;/p&gt;
+
+&lt;h2 id=&#34;8-4:dfa05d43a87fcf4c524c7d73096d4e48&#34;&gt;8.4&lt;/h2&gt;
+
+&lt;h3 id=&#34;2:dfa05d43a87fcf4c524c7d73096d4e48&#34;&gt;2&lt;/h3&gt;
+</description>
+    </item>
+    
+    <item>
       <title>week4</title>
       <link>http://leochencipher.github.io/blog/2016/03/25/week4/</link>
       <pubDate>Fri, 25 Mar 2016 11:11:00 +0800</pubDate>
