@@ -6,8 +6,52 @@
     <description>Recent content in Posts on Sharing the thoughts</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 21 May 2016 11:00:50 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 29 May 2016 07:53:32 +0800</lastBuildDate>
     <atom:link href="http://leochencipher.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>week13</title>
+      <link>http://leochencipher.github.io/blog/2016/05/29/week13/</link>
+      <pubDate>Sun, 29 May 2016 07:53:32 +0800</pubDate>
+      
+      <guid>http://leochencipher.github.io/blog/2016/05/29/week13/</guid>
+      <description>
+
+&lt;h1 id=&#34;第13周:e2bc1f7c7556eb13c86fa60377e62f97&#34;&gt;第13周&lt;/h1&gt;
+
+&lt;h2 id=&#34;内容总结:e2bc1f7c7556eb13c86fa60377e62f97&#34;&gt;内容总结&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;10.6 高斯公式与斯托克斯公式：用高斯公式计算二次曲面积分，用斯托克斯公式计算二次曲线积分，梯度，散度，旋度的定义，通量和环流量的计算&lt;/li&gt;
+&lt;li&gt;11.1 数项级数的概念和性质：几何级数的敛散判断，调和级数发散，级数收敛的必要条件，级数的基本性质&lt;/li&gt;
+&lt;li&gt;11.2 数项级数收敛性的判定：正项级数收敛的充分必要条件，比较审敛法，p级数，比较审敛法的极限形式，比值审敛法，根值审敛法，莱布尼茨审敛法，绝对收敛，条件收敛&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;作业:e2bc1f7c7556eb13c86fa60377e62f97&#34;&gt;作业&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;10.6：1(1)(2), 3(1), 4(1)(4), 7&lt;/li&gt;
+&lt;li&gt;11.1：2(4), 3(3), 4(2)(3)(4), 5(1)(4)(5)(6)&lt;/li&gt;
+&lt;li&gt;11.2：1(3)(4), 2, 3(2)(5)(6)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;课件分享:e2bc1f7c7556eb13c86fa60377e62f97&#34;&gt;课件分享&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://pan.baidu.com/s/1qX8xzcg&#34;&gt;高斯公式与斯托克斯公式&lt;/a&gt;
+分享密码：yh6f&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://pan.baidu.com/s/1eSrxfwu&#34;&gt;习题课&lt;/a&gt;
+分享密码：47g4&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://pan.baidu.com/s/1bo8NURd&#34;&gt;数项级数的概念和性质&lt;/a&gt;
+分享密码：g2km&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://pan.baidu.com/s/1cBicSe&#34;&gt;数项级数收敛性的判定&lt;/a&gt;
+分享密码：mpgm&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>week12</title>
@@ -959,67 +1003,6 @@ $$&lt;/p&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;分享密码：c5nk&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>week2</title>
-      <link>http://leochencipher.github.io/blog/2016/03/12/week2/</link>
-      <pubDate>Sat, 12 Mar 2016 13:43:54 +0800</pubDate>
-      
-      <guid>http://leochencipher.github.io/blog/2016/03/12/week2/</guid>
-      <description>
-
-&lt;h1 id=&#34;第二周课程:3fe32ddde4fd68dd585d4615f029762b&#34;&gt;第二周课程&lt;/h1&gt;
-
-&lt;h2 id=&#34;内容小结:3fe32ddde4fd68dd585d4615f029762b&#34;&gt;内容小结&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;7.4 平面及其方程&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;点法式，一般式，截距式，两平面夹角，点到平面距离&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;7.5 直线及其方程&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;一般式，对称式，参数式，两直线夹角，直线和平面的夹角，平面束&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;7.6 二次曲面&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;椭球面，单叶双曲面，双叶双曲面，椭圆抛物面，双曲抛物面，椭圆锥面&lt;/p&gt;
-
-&lt;h2 id=&#34;作业:3fe32ddde4fd68dd585d4615f029762b&#34;&gt;作业&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;7.4: 3,5,11(2),12&lt;/li&gt;
-&lt;li&gt;7.5: 3(1),4,5,7(2),9,11,12,16&lt;/li&gt;
-&lt;li&gt;7.6: 1(6),2(2)(5)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;作业答案:3fe32ddde4fd68dd585d4615f029762b&#34;&gt;作业答案&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://pan.baidu.com/s/1eRmnGtk&#34;&gt;作业答案&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;分享密码：xdsk&lt;/p&gt;
-
-&lt;h2 id=&#34;课件下载地址:3fe32ddde4fd68dd585d4615f029762b&#34;&gt;课件下载地址&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://pan.baidu.com/s/1o7z1uDc&#34;&gt;平面及其方程&lt;/a&gt;.
-分享密码: z1xi&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://pan.baidu.com/s/1i4mKyjz&#34;&gt;直线及其方程&lt;/a&gt;.
-分享密码: 8mwt&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://pan.baidu.com/s/1pKg2vk3&#34;&gt;二次曲面&lt;/a&gt;.
-分享密码: 82hv&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://pan.baidu.com/s/1bsyfxk&#34;&gt;章节小结和习题&lt;/a&gt;.
-分享密码: gykx&lt;/li&gt;
-&lt;/ul&gt;
 </description>
     </item>
     
