@@ -1,293 +1,1225 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<html lang="zh-CN">
 <head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-  <title>Sharing the thoughts &middot; 康  宁</title>
-
-  
-  <link rel="stylesheet" href="http://leochencipher.github.io/css/poole.css">
-  <link rel="stylesheet" href="http://leochencipher.github.io/css/hyde.css">
-  <link rel="stylesheet" href="http://leochencipher.github.io/css/poole-overrides.css">
-  <link rel="stylesheet" href="http://leochencipher.github.io/css/hyde-overrides.css">
-  <link rel="stylesheet" href="http://leochencipher.github.io/css/hyde-x.css">
-  <link rel="stylesheet" href="http://leochencipher.github.io/css/highlight/sunburst.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  
-
-  
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://leochencipher.github.io/touch-icon-144-precomposed.png">
-  <link href="http://leochencipher.github.io/favicon.png" rel="icon">
-
-  
-  
-  
-  <link href="http://leochencipher.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Sharing the thoughts &middot; 康  宁" />
-
-  <meta name="description" content="Your default page description">
-  <meta name="keywords" content="your,default,page,keywords">
-  
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'Your Google Analytics tracking code', 'auto');
-    ga('send', 'pageview');
-  </script>
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>贪吃蛇 - 网页版</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        #game-container {
+            text-align: center;
+        }
+        h1 {
+            color: #fff;
+            margin-bottom: 20px;
+        }
+        canvas {
+            border: 2px solid #333;
+            background-color: #000;
+        }
+        .controls {
+            color: #fff;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        #mode-selection {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        .mode-button {
+            width: 200px;
+            height: 60px;
+            font-size: 20px;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            color: white;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .mode-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        .mode-button:active {
+            transform: scale(0.95);
+        }
+        .easy-mode {
+            background-color: #0000ff;
+        }
+        .normal-mode {
+            background-color: #ffff00;
+            color: #000;
+        }
+        .hard-mode {
+            background-color: #ff0000;
+        }
+        #game-area {
+            display: none;
+        }
+    </style>
 </head>
-<body class="theme-base-0d layout-reverse">
-<div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      
-        <img src="https://www.gravatar.com/avatar/MD5%20hash%20of%20your%20Gravatar%20email%20address?s=200"
-             alt="gravatar" title="康  宁">
-      
-      <h1>康  宁</h1>
-      <p class="lead">Practice makes perfect</p>
-    </div>
-
-    <ul class="sidebar-nav">
-      <li class="sidebar-nav-item"><a href="http://leochencipher.github.io/">Blog</a></li>
-      
-    </ul>
-
-    <ul class="sidebar-nav">
-      <li class="sidebar-nav-item">
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      </li>
-    </ul>
-
-    
-    <p><script id='flattr'>
-      (function(id){
-        var s = document.getElementById(id);
-        var f = document.createElement('iframe');
-        f.src = '//api.flattr.com/button/view/?uid=&button=compact&url=http:\/\/leochencipher.github.io\/&title=Sharing the thoughts';
-        f.title = 'Flattr';
-        f.height = 20;
-        f.width = 110;
-        f.style.borderWidth = 0;
-        s.parentNode.insertBefore(f, s);
-      })('flattr');
-    </script></p>
-    
-
-    <p>Copyright &copy; 2016 <a href="http://leochencipher.github.io/license/">License</a><br/>
-       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
-  </div>
-</div>
-
-
-<div class="content container">
-  <div class="posts">
-    
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="http://leochencipher.github.io/blog/2016/06/18/pretest/">pretest</a>
-      </h1>
-      <span class="post-date">Jun 18, 2016 &middot; 1 minute read
-      
-      <br/>
-      
-      </span>
-      
-      模拟考试及答案 模拟考试及答案 分享密码：6kp2 知识点总结 知识点总结 分享密码：4uud
-      
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="http://leochencipher.github.io/blog/2016/06/10/fullslideshare/">fullslideshare</a>
-      </h1>
-      <span class="post-date">Jun 10, 2016 &middot; 1 minute read
-      
-      <br/>
-      
-      </span>
-      
-      全部课件分享（包含习题课） 课件 分享密码：v26c 加分小作业 加分作业及说明 分享密码：sbdw
-      
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="http://leochencipher.github.io/blog/2016/06/05/week14/">week14</a>
-      </h1>
-      <span class="post-date">Jun 5, 2016 &middot; 1 minute read
-      
-      <br/>
-      
-      </span>
-      
-      第14周 内容总结 11.3 幂级数：函数项级数，收敛域，发散域，幂级数，收敛半径，幂级数的收敛域，收敛区间，幂级数和或差的收敛半径，逐项求导，逐项积分 11.5 和函数：等比级数的和函数，利用逐项求导（积分）求幂级数的和函数，利用换元法求幂级数的和函数 作业 11.2：4(2)(3)(4), 5(1)(4) 11.3：1(3)(6)(8), 2, 3(1) 11.5：1, 2 课件分享 幂级数 分享密码：4pdi 幂级数的应用及欧拉公式 分享密码：5ucb
-      
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="http://leochencipher.github.io/blog/2016/05/29/week13/">week13</a>
-      </h1>
-      <span class="post-date">May 29, 2016 &middot; 1 minute read
-      
-      <br/>
-      
-      </span>
-      
-      第13周 内容总结 10.6 高斯公式与斯托克斯公式：用高斯公式计算二次曲面积分，用斯托克斯公式计算二次曲线积分，梯度，散度，旋度的定义，通量和环流量的计算 11.1 数项级数的概念和性质：几何级数的敛散判断，调和级数发散，级数收敛的必要条件，级数的基本性质 11.2 数项级数收敛性的判定：正项级数收敛的充分必要条件，比较审敛法，p级数，比较审敛法的极限形式，比值审敛法，根值审敛法，莱布尼茨审敛法，绝对收敛，条件收敛 作业 10.6：1(1)(2), 3(1), 4(1)(4), 7 11.1：2(4), 3(3), 4(2)(3)(4), 5(1)(4)(5)(6) 11.2：1(3)(4), 2, 3(2)(5)(6) 课件分享 高斯公式与斯托克斯公式 分享密码：yh6f 习题课 分享密码：47g4 数项级数的概念和性质 分享密码：g2km 数项级数收敛性的判定 分享密码：mpgm
-      
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="http://leochencipher.github.io/blog/2016/05/21/week12/">week12</a>
-      </h1>
-      <span class="post-date">May 21, 2016 &middot; 1 minute read
-      
-      <br/>
-      
-      </span>
-      
-      第12周 内容总结 10.4 对于面积的曲面积分：线性，可加性，单调性，几何意义与物理意义，计算 10.5 对于坐标的曲面积分：曲面定向，线性，可加性，有向性，物理意义，计算 作业 10.3：7（1） 10.4：3，5，7，8 10.5：2，3，4，5，6，7 课件分享 对于面积的曲面积分 分享密码：ay8t 对于坐标的曲面积分 分享密码：w37k
-      
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="http://leochencipher.github.io/blog/2016/05/14/week11/">week11</a>
-      </h1>
-      <span class="post-date">May 14, 2016 &middot; 1 minute read
-      
-      <br/>
-      
-      </span>
-      
-      第11周 内容总结 10.2 对于坐标的曲线积分：线性，可加性，有向性，参数方程的计算 10.3 格林公式：格林公式的定理，积分与路径无关的定理，全微分的原函数，全微分方程 作业 10.2：2(1)(3)(4)(5)(6), 4 10.3：2(1)(3)(4), 3(2)(3), 4(2), 5, 6(3), 7(4) 课件分享 对于坐标的曲线积分 分享密码：467w 格林公式 分享密码：urfh
-      
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="http://leochencipher.github.io/blog/2016/05/07/week10/">week10</a>
-      </h1>
-      <span class="post-date">May 7, 2016 &middot; 1 minute read
-      
-      <br/>
-      
-      </span>
-      
-      第10周 内容总结 10.1 对于弧长的曲线积分：线性，可加性，单调性，参数方程的计算，极坐标的计算 作业 总练习题九：5, 7, 9(2)(3),11 10.1：2(1)(3)(4)(5),3,4 课件分享 对于弧长的曲线积分 分享密码：r2b6
-      
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="http://leochencipher.github.io/blog/2016/05/01/week9/">week9</a>
-      </h1>
-      <span class="post-date">May 1, 2016 &middot; 1 minute read
-      
-      <br/>
-      
-      </span>
-      
-      Week 9 课程内容 9.4 重积分的应用：立体体积，空间曲面面积，质心，形心，转动惯量，引力 作业 9.3： 1(2),2,3,6,7,8(1),9,11,12 9.4： 1(3),3,7,8,10,13,15 课件分享 9.4 重积分的应用 分享密码：r3eu 习题课 分享密码：tken
-      
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="http://leochencipher.github.io/blog/2016/04/23/week8/">week8</a>
-      </h1>
-      <span class="post-date">Apr 23, 2016 &middot; 1 minute read
-      
-      <br/>
-      
-      </span>
-      
-      第8周 课程内容 9.3 三重积分：三重积分的定义，投影法，截面法，三次积分，柱坐标系，球坐标系 作业 9.3: 1(2),2,6,8(1),9,12 课件分享 三重积分 分享密码：7gkq
-      
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="http://leochencipher.github.io/blog/2016/04/14/midterm_outline/">midterm_outline</a>
-      </h1>
-      <span class="post-date">Apr 14, 2016 &middot; 1 minute read
-      
-      <br/>
-      
-      </span>
-      
-      期中复习提要 请对照复习，参照课堂上讲到的要求： 期中复习提要 分享密码：9y43
-      
-      
-    </div>
-    
-    
-    
-    <ul class="pagination">
+<body>
+    <div id="game-container">
+        <div id="mode-selection">
+            <button class="mode-button easy-mode" onclick="startGame('easy')">简单模式</button>
+            <button class="mode-button normal-mode" onclick="startGame('normal')">普通模式</button>
+            <button class="mode-button hard-mode" onclick="startGame('hard')">困难模式</button>
+        </div>
         
-        <li>
-            <a href="/" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
-        </li>
-        
-        <li
-        class="disabled">
-        <a href="" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
-        </li>
-        
-        <li
-        class="active"><a href="/">1</a></li>
-        
-        <li
-        ><a href="/page/2/">2</a></li>
-        
-        <li
-        >
-        <a href="/page/2/" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
-        </li>
-        
-        <li>
-            <a href="/page/2/" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
-        </li>
-        
-    </ul>
-    
-  </div>
-</div>
+        <div id="game-area">
+            <h1>贪吃蛇 - 网页版</h1>
+            <canvas id="gameCanvas" width="800" height="600"></canvas>
+            <div class="controls">
+                控制：方向键移动，Q键退出<br>
+                目标：根据难度达到相应长度获胜
+            </div>
+        </div>
+    </div>
 
+    <script>
+        // 游戏常量
+        const WIDTH = 800;
+        const HEIGHT = 600;
+        const GRID_SIZE = 20;
+        const GRID_WIDTH = WIDTH / GRID_SIZE;
+        const GRID_HEIGHT = HEIGHT / GRID_SIZE;
 
-<script src="http://leochencipher.github.io/js/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-<script type="text/javascript"
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
+        // 游戏模式
+        let gameMode = 'easy'; // easy, normal, hard
+        let winLength = 5; // 胜利长度
+
+        // 颜色
+        const BLACK = '#000000';
+        const WHITE = '#ffffff';
+        const GREEN = '#00ff00';
+        const RED = '#ff0000';
+        const YELLOW = '#ffff00';
+        const BLUE = '#0000ff';
+        const PURPLE = '#800080';
+        const ORANGE = '#ffa500';
+
+        // 方向
+        const UP = [0, -1];
+        const DOWN = [0, 1];
+        const LEFT = [-1, 0];
+        const RIGHT = [1, 0];
+
+        // 音效系统
+        class SoundManager {
+            constructor() {
+                this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            }
+
+            generateSound(frequency, duration, volume = 0.5) {
+                return () => {
+                    const oscillator = this.audioContext.createOscillator();
+                    const gainNode = this.audioContext.createGain();
+
+                    oscillator.connect(gainNode);
+                    gainNode.connect(this.audioContext.destination);
+
+                    oscillator.frequency.setValueAtTime(frequency, this.audioContext.currentTime);
+                    gainNode.gain.setValueAtTime(0, this.audioContext.currentTime);
+                    gainNode.gain.linearRampToValueAtTime(volume, this.audioContext.currentTime + 0.01);
+                    gainNode.gain.exponentialRampToValueAtTime(0.001, this.audioContext.currentTime + duration);
+
+                    oscillator.start(this.audioContext.currentTime);
+                    oscillator.stop(this.audioContext.currentTime + duration);
+                };
+            }
+
+            generateMouseSound() {
+                return () => {
+                    const oscillator = this.audioContext.createOscillator();
+                    const gainNode = this.audioContext.createGain();
+
+                    oscillator.connect(gainNode);
+                    gainNode.connect(this.audioContext.destination);
+
+                    oscillator.frequency.setValueAtTime(2000, this.audioContext.currentTime);
+                    oscillator.frequency.exponentialRampToValueAtTime(3000, this.audioContext.currentTime + 0.1);
+                    oscillator.frequency.exponentialRampToValueAtTime(2000, this.audioContext.currentTime + 0.2);
+
+                    gainNode.gain.setValueAtTime(0, this.audioContext.currentTime);
+                    gainNode.gain.linearRampToValueAtTime(0.4, this.audioContext.currentTime + 0.01);
+                    gainNode.gain.exponentialRampToValueAtTime(0.001, this.audioContext.currentTime + 0.2);
+
+                    oscillator.start(this.audioContext.currentTime);
+                    oscillator.stop(this.audioContext.currentTime + 0.2);
+                };
+            }
+        }
+
+        const soundManager = new SoundManager();
+        const appleSound = soundManager.generateSound(800, 0.1, 0.5);
+        const mushroomSound = soundManager.generateSound(400, 0.3, 0.6);
+        const mouseSound = soundManager.generateMouseSound();
+        const bombSound = soundManager.generateSound(150, 0.6, 0.7);
+
+        // 蛇类
+        class Snake {
+            constructor() {
+                this.length = 1;
+                this.positions = [[GRID_WIDTH / 2 | 0, GRID_HEIGHT / 2 | 0]];
+                this.direction = this.getRandomDirection();
+                this.color = GREEN;
+                this.score = 0;
+                this.width = GRID_SIZE;
+            }
+
+            getRandomDirection() {
+                const directions = [UP, DOWN, LEFT, RIGHT];
+                return directions[Math.floor(Math.random() * directions.length)];
+            }
+
+            getHeadPosition() {
+                return this.positions[0];
+            }
+
+            getHeadArea() {
+                const head = this.getHeadPosition();
+                const gridWidthInCells = this.width / GRID_SIZE;
+                const positions = [];
+                for (let dx = 0; dx < gridWidthInCells; dx++) {
+                    for (let dy = 0; dy < gridWidthInCells; dy++) {
+                        positions.push([(head[0] + dx) % GRID_WIDTH, (head[1] + dy) % GRID_HEIGHT]);
+                    }
+                }
+                return positions;
+            }
+
+            turn(point) {
+                if (this.length > 1 && (point[0] * -1 === this.direction[0] && point[1] * -1 === this.direction[1])) {
+                    return;
+                }
+                this.direction = point;
+            }
+
+            move() {
+                const cur = this.getHeadPosition();
+                const [x, y] = this.direction;
+                const newPos = [(cur[0] + x + GRID_WIDTH) % GRID_WIDTH, (cur[1] + y + GRID_HEIGHT) % GRID_HEIGHT];
+                
+                if (this.positions.length > 2) {
+                    for (let i = 2; i < this.positions.length; i++) {
+                        if (newPos[0] === this.positions[i][0] && newPos[1] === this.positions[i][1]) {
+                            this.reset();
+                            return;
+                        }
+                    }
+                }
+                
+                this.positions.unshift(newPos);
+                if (this.positions.length > this.length) {
+                    this.positions.pop();
+                }
+            }
+
+            reset() {
+                this.length = 1;
+                this.positions = [[GRID_WIDTH / 2 | 0, GRID_HEIGHT / 2 | 0]];
+                this.direction = this.getRandomDirection();
+                this.score = 0;
+                this.width = GRID_SIZE;
+            }
+
+            render(ctx) {
+                for (let i = 0; i < this.positions.length; i++) {
+                    const p = this.positions[i];
+                    const center_x = p[0] * GRID_SIZE + GRID_SIZE / 2;
+                    const center_y = p[1] * GRID_SIZE + GRID_SIZE / 2;
+                    
+                    // 尾巴逐渐变细
+                    const progress = i / Math.max(1, this.positions.length - 1);
+                    const radius = Math.max(3, (this.width / 2) * (1 - progress * 0.5));
+                    
+                    // 画蛇身
+                    ctx.fillStyle = this.color;
+                    ctx.beginPath();
+                    ctx.arc(center_x, center_y, radius, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.strokeStyle = BLACK;
+                    ctx.lineWidth = 1;
+                    ctx.stroke();
+                    
+                    if (i === 0) {
+                        // 画蛇头眼睛（根据蛇的宽度调整眼睛位置和大小）
+                        const [dx, dy] = this.direction;
+                        const widthScale = this.width / GRID_SIZE; // 宽度缩放因子
+                        const eye_offset_x = dx * 4 * widthScale;
+                        const eye_offset_y = dy * 4 * widthScale;
+                        const eye1_x = center_x + eye_offset_x + dy * 4 * widthScale;
+                        const eye1_y = center_y + eye_offset_y - dx * 4 * widthScale;
+                        const eye2_x = center_x + eye_offset_x - dy * 4 * widthScale;
+                        const eye2_y = center_y + eye_offset_y + dx * 4 * widthScale;
+                        
+                        // 画白色眼白（大小随蛇宽度变化）
+                        const eyeSize = 5 * widthScale;
+                        ctx.fillStyle = WHITE;
+                        ctx.beginPath();
+                        ctx.arc(eye1_x, eye1_y, eyeSize, 0, Math.PI * 2);
+                        ctx.fill();
+                        ctx.beginPath();
+                        ctx.arc(eye2_x, eye2_y, eyeSize, 0, Math.PI * 2);
+                        ctx.fill();
+                        
+                        // 画黑色瞳孔（大小随蛇宽度变化）
+                        const pupilSize = 2 * widthScale;
+                        ctx.fillStyle = BLACK;
+                        ctx.beginPath();
+                        ctx.arc(eye1_x, eye1_y, pupilSize, 0, Math.PI * 2);
+                        ctx.fill();
+                        ctx.beginPath();
+                        ctx.arc(eye2_x, eye2_y, pupilSize, 0, Math.PI * 2);
+                        ctx.fill();
+                    }
+                }
+            }
+        }
+
+        // AI蛇类
+        class AISnake extends Snake {
+            constructor() {
+                super();
+                this.color = BLUE;
+                this.positions = [[(GRID_WIDTH * 3 / 4) | 0, GRID_HEIGHT / 2 | 0]];
+                this.direction = this.getRandomDirection();
+                this.score = 0;
+            }
+
+            aiMove(foodPos, playerSnake, bombs, mouse) {
+                const head = this.getHeadPosition();
+                const [food_x, food_y] = foodPos;
+                
+                const possibleMoves = [];
+                
+                for (const direction of [UP, DOWN, LEFT, RIGHT]) {
+                    const [dx, dy] = direction;
+                    const newPos = [(head[0] + dx + GRID_WIDTH) % GRID_WIDTH, (head[1] + dy + GRID_HEIGHT) % GRID_HEIGHT];
+                    
+                    // 检查是否会撞到自己
+                    if (this.positions.length > 2) {
+                        let collision = false;
+                        for (let i = 2; i < this.positions.length; i++) {
+                            if (newPos[0] === this.positions[i][0] && newPos[1] === this.positions[i][1]) {
+                                collision = true;
+                                break;
+                            }
+                        }
+                        if (collision) continue;
+                    }
+                    
+                    // 检查是否会撞到玩家蛇
+                    let playerCollision = false;
+                    for (const pos of playerSnake.positions) {
+                        if (newPos[0] === pos[0] && newPos[1] === pos[1]) {
+                            playerCollision = true;
+                            break;
+                        }
+                    }
+                    if (playerCollision) continue;
+                    
+                    // 检查是否会撞到炸弹
+                    let bombCollision = false;
+                    for (const bomb of bombs) {
+                        if (newPos[0] === bomb.position[0] && newPos[1] === bomb.position[1]) {
+                            bombCollision = true;
+                            break;
+                        }
+                    }
+                    if (bombCollision) continue;
+                    
+                    // 检查是否会撞到老鼠
+                    if (mouse.active && newPos[0] === mouse.position[0] && newPos[1] === mouse.position[1]) {
+                        continue;
+                    }
+                    
+                    // 计算到食物的距离
+                    const distance = Math.abs(newPos[0] - food_x) + Math.abs(newPos[1] - food_y);
+                    possibleMoves.push({ direction, distance });
+                }
+                
+                if (possibleMoves.length > 0) {
+                    // 选择距离食物最近的方向
+                    const bestMove = possibleMoves.reduce((best, current) => 
+                        current.distance < best.distance ? current : best
+                    );
+                    this.turn(bestMove.direction);
+                } else {
+                    // 如果没有安全移动，尝试随机移动
+                    for (const direction of [UP, DOWN, LEFT, RIGHT]) {
+                        const [dx, dy] = direction;
+                        const newPos = [(head[0] + dx + GRID_WIDTH) % GRID_WIDTH, (head[1] + dy + GRID_HEIGHT) % GRID_HEIGHT];
+                        
+                        let collision = false;
+                        for (let i = 2; i < this.positions.length; i++) {
+                            if (newPos[0] === this.positions[i][0] && newPos[1] === this.positions[i][1]) {
+                                collision = true;
+                                break;
+                            }
+                        }
+                        
+                        let playerCollision = false;
+                        for (const pos of playerSnake.positions) {
+                            if (newPos[0] === pos[0] && newPos[1] === pos[1]) {
+                                playerCollision = true;
+                                break;
+                            }
+                        }
+                        
+                        if (!collision && !playerCollision) {
+                            this.turn(direction);
+                            break;
+                        }
+                    }
+                }
+                
+                this.move();
+            }
+
+            reset() {
+                super.reset();
+                this.positions = [[(GRID_WIDTH * 3 / 4) | 0, GRID_HEIGHT / 2 | 0]];
+            }
+        }
+
+        // 食物类
+        class Food {
+            constructor() {
+                this.position = [0, 0];
+                this.color = RED;
+                this.isMushroom = false;
+                this.foodCount = 0;
+                this.randomizePosition();
+            }
+
+            randomizePosition(snakeHead = null, foodPosition = null, existingBombs = []) {
+                if (snakeHead === null) {
+                    this.position = [
+                        Math.floor(Math.random() * (GRID_WIDTH - 2)) + 1,
+                        Math.floor(Math.random() * (GRID_HEIGHT - 2)) + 1
+                    ];
+                } else {
+                    const maxAttempts = 100;
+                    for (let i = 0; i < maxAttempts; i++) {
+                        const newPos = [
+                            Math.floor(Math.random() * (GRID_WIDTH - 2)) + 1,
+                            Math.floor(Math.random() * (GRID_HEIGHT - 2)) + 1
+                        ];
+                        
+                        // 检查与蛇头的距离
+                        const snakeDistance = Math.abs(newPos[0] - snakeHead[0]) + Math.abs(newPos[1] - snakeHead[1]);
+                        if (snakeDistance < 6) continue;
+                        
+                        // 检查是否与食物重叠
+                        if (foodPosition && newPos[0] === foodPosition[0] && newPos[1] === foodPosition[1]) {
+                            continue;
+                        }
+                        
+                        // 检查食物周围3格内的炸弹数量
+                        if (foodPosition) {
+                            let bombsNearFood = 0;
+                            for (const bomb of existingBombs) {
+                                if (bomb.position[0] === newPos[0] && bomb.position[1] === newPos[1]) continue;
+                                const distance = Math.abs(bomb.position[0] - foodPosition[0]) + Math.abs(bomb.position[1] - foodPosition[1]);
+                                if (distance <= 3) bombsNearFood++;
+                            }
+                            const newPosDistanceToFood = Math.abs(newPos[0] - foodPosition[0]) + Math.abs(newPos[1] - foodPosition[1]);
+                            if (newPosDistanceToFood <= 3 && bombsNearFood >= 1) {
+                                continue;
+                            }
+                        }
+                        
+                        this.position = newPos;
+                        break;
+                    }
+                }
+            }
+
+            updateType() {
+                this.foodCount++;
+                if (this.foodCount % 5 === 0) {
+                    this.isMushroom = true;
+                    this.color = PURPLE;
+                } else {
+                    this.isMushroom = false;
+                    this.color = RED;
+                }
+            }
+
+            reset() {
+                this.foodCount = 0;
+                this.isMushroom = false;
+                this.color = RED;
+            }
+
+            render(ctx) {
+                const center_x = this.position[0] * GRID_SIZE + GRID_SIZE / 2;
+                const center_y = this.position[1] * GRID_SIZE + GRID_SIZE / 2;
+                
+                if (this.isMushroom) {
+                    // 画蘑菇
+                    // 蘑菇伞（更大，红色）
+                    ctx.fillStyle = RED;
+                    ctx.beginPath();
+                    ctx.ellipse(center_x - 9, center_y - 10, 9, 6, 0, 0, Math.PI * 2);
+                    ctx.fill();
+                    // 蘑菇柄
+                    ctx.fillStyle = WHITE;
+                    ctx.fillRect(center_x - 3, center_y - 2, 6, 10);
+                    // 蘑菇斑点（白色）
+                    ctx.fillStyle = WHITE;
+                    ctx.beginPath();
+                    ctx.arc(center_x - 5, center_y - 5, 2, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.beginPath();
+                    ctx.arc(center_x + 5, center_y - 4, 2, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.beginPath();
+                    ctx.arc(center_x, center_y - 7, 2, 0, Math.PI * 2);
+                    ctx.fill();
+                } else {
+                    // 画苹果
+                    // 苹果主体
+                    ctx.fillStyle = RED;
+                    ctx.beginPath();
+                    ctx.arc(center_x, center_y + 2, 7, 0, Math.PI * 2);
+                    ctx.fill();
+                    // 苹果高光
+                    ctx.fillStyle = '#ff6464';
+                    ctx.beginPath();
+                    ctx.arc(center_x - 2, center_y, 2, 0, Math.PI * 2);
+                    ctx.fill();
+                    // 苹果梗
+                    ctx.strokeStyle = '#8b4513';
+                    ctx.lineWidth = 2;
+                    ctx.beginPath();
+                    ctx.moveTo(center_x, center_y - 5);
+                    ctx.lineTo(center_x + 2, center_y - 9);
+                    ctx.stroke();
+                    // 苹果叶子
+                    ctx.fillStyle = GREEN;
+                    ctx.beginPath();
+                    ctx.ellipse(center_x + 1, center_y - 10, 3, 2, 0, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            }
+        }
+
+        // 炸弹类
+        class Bomb {
+            constructor() {
+                this.position = [0, 0];
+                this.color = YELLOW;
+                this.randomizePosition();
+            }
+
+            randomizePosition(snakeHead = null, foodPosition = null, existingBombs = []) {
+                if (snakeHead === null) {
+                    this.position = [
+                        Math.floor(Math.random() * (GRID_WIDTH - 2)) + 1,
+                        Math.floor(Math.random() * (GRID_HEIGHT - 2)) + 1
+                    ];
+                } else {
+                    const maxAttempts = 100;
+                    for (let i = 0; i < maxAttempts; i++) {
+                        const newPos = [
+                            Math.floor(Math.random() * (GRID_WIDTH - 2)) + 1,
+                            Math.floor(Math.random() * (GRID_HEIGHT - 2)) + 1
+                        ];
+                        
+                        // 检查与蛇头的距离
+                        const snakeDistance = Math.abs(newPos[0] - snakeHead[0]) + Math.abs(newPos[1] - snakeHead[1]);
+                        if (snakeDistance < 6) continue;
+                        
+                        // 检查是否与食物重叠
+                        if (foodPosition && newPos[0] === foodPosition[0] && newPos[1] === foodPosition[1]) {
+                            continue;
+                        }
+                        
+                        // 检查食物周围3格内的炸弹数量
+                        if (foodPosition) {
+                            let bombsNearFood = 0;
+                            for (const bomb of existingBombs) {
+                                if (bomb.position[0] === newPos[0] && bomb.position[1] === newPos[1]) continue;
+                                const distance = Math.abs(bomb.position[0] - foodPosition[0]) + Math.abs(bomb.position[1] - foodPosition[1]);
+                                if (distance <= 3) bombsNearFood++;
+                            }
+                            const newPosDistanceToFood = Math.abs(newPos[0] - foodPosition[0]) + Math.abs(newPos[1] - foodPosition[1]);
+                            if (newPosDistanceToFood <= 3 && bombsNearFood >= 1) {
+                                continue;
+                            }
+                        }
+                        
+                        this.position = newPos;
+                        break;
+                    }
+                }
+            }
+
+            render(ctx) {
+                const center_x = this.position[0] * GRID_SIZE + GRID_SIZE / 2;
+                const center_y = this.position[1] * GRID_SIZE + GRID_SIZE / 2;
+                
+                // 画炸弹（黄色主色调）
+                // 炸弹主体（圆形）
+                ctx.fillStyle = YELLOW;
+                ctx.beginPath();
+                ctx.arc(center_x, center_y + 2, 7, 0, Math.PI * 2);
+                ctx.fill();
+                // 炸弹阴影/高光
+                ctx.fillStyle = '#ffc800';
+                ctx.beginPath();
+                ctx.arc(center_x - 2, center_y, 3, 0, Math.PI * 2);
+                ctx.fill();
+                // 引线
+                ctx.strokeStyle = '#8b4513';
+                ctx.lineWidth = 2;
+                ctx.beginPath();
+                ctx.moveTo(center_x, center_y - 5);
+                ctx.lineTo(center_x + 3, center_y - 10);
+                ctx.stroke();
+                // 火花
+                ctx.fillStyle = ORANGE;
+                ctx.beginPath();
+                ctx.arc(center_x + 4, center_y - 11, 3, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.fillStyle = RED;
+                ctx.beginPath();
+                ctx.arc(center_x + 5, center_y - 12, 2, 0, Math.PI * 2);
+                ctx.fill();
+                // 炸弹上的骷髅标志（黑色）
+                ctx.fillStyle = BLACK;
+                ctx.beginPath();
+                ctx.arc(center_x, center_y + 2, 3, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.strokeStyle = YELLOW;
+                ctx.lineWidth = 1;
+                ctx.beginPath();
+                ctx.moveTo(center_x - 1, center_y + 1);
+                ctx.lineTo(center_x + 1, center_y + 3);
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.moveTo(center_x + 1, center_y + 1);
+                ctx.lineTo(center_x - 1, center_y + 3);
+                ctx.stroke();
+            }
+        }
+
+        // 老鼠洞类
+        class MouseHole {
+            constructor() {
+                this.position = [0, 0];
+                this.randomizePosition();
+            }
+
+            randomizePosition() {
+                this.position = [
+                    Math.floor(Math.random() * (GRID_WIDTH - 4)) + 2,
+                    Math.floor(Math.random() * (GRID_HEIGHT - 4)) + 2
+                ];
+            }
+
+            render(ctx) {
+                const center_x = this.position[0] * GRID_SIZE + GRID_SIZE / 2;
+                const center_y = this.position[1] * GRID_SIZE + GRID_SIZE / 2;
+                
+                // 画老鼠洞（深褐色椭圆）
+                ctx.fillStyle = '#654321';
+                ctx.beginPath();
+                ctx.ellipse(center_x, center_y, 8, 6, 0, 0, Math.PI * 2);
+                ctx.fill();
+                // 画洞口边缘
+                ctx.strokeStyle = '#8b5a2b';
+                ctx.lineWidth = 2;
+                ctx.beginPath();
+                ctx.ellipse(center_x, center_y, 8, 6, 0, 0, Math.PI * 2);
+                ctx.stroke();
+                // 画洞内阴影
+                ctx.fillStyle = '#3c2814';
+                ctx.beginPath();
+                ctx.ellipse(center_x, center_y, 6, 4, 0, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        // 老鼠类
+        class Mouse {
+            constructor() {
+                this.position = [0, 0];
+                this.color = BLUE;
+                this.direction = this.getRandomDirection();
+                this.active = true;
+                this.randomizePosition();
+            }
+
+            getRandomDirection() {
+                const directions = [UP, DOWN, LEFT, RIGHT];
+                return directions[Math.floor(Math.random() * directions.length)];
+            }
+
+            randomizePosition(snakeHead = null, mouseHole = null) {
+                if (mouseHole) {
+                    // 从老鼠洞附近生成（距离老鼠洞1-3格）
+                    const [hole_x, hole_y] = mouseHole.position;
+                    const maxAttempts = 50;
+                    for (let i = 0; i < maxAttempts; i++) {
+                        const dx = Math.floor(Math.random() * 7) - 3;
+                        const dy = Math.floor(Math.random() * 7) - 3;
+                        const new_x = (hole_x + dx + GRID_WIDTH) % GRID_WIDTH;
+                        const new_y = (hole_y + dy + GRID_HEIGHT) % GRID_HEIGHT;
+                        const new_pos = [new_x, new_y];
+                        
+                        // 确保不在老鼠洞位置
+                        if (new_pos[0] === hole_x && new_pos[1] === hole_y) {
+                            continue;
+                        }
+                        
+                        // 确保距离老鼠洞至少1格
+                        const distance = Math.abs(new_x - hole_x) + Math.abs(new_y - hole_y);
+                        if (distance < 1) {
+                            continue;
+                        }
+                        
+                        // 确保距离蛇头至少6格
+                        if (snakeHead) {
+                            const snake_distance = Math.abs(new_x - snakeHead[0]) + Math.abs(new_y - snakeHead[1]);
+                            if (snake_distance < 6) {
+                                continue;
+                            }
+                        }
+                        
+                        this.position = new_pos;
+                        break;
+                    }
+                } else {
+                    // 随机生成
+                    while (true) {
+                        const new_pos = [
+                            Math.floor(Math.random() * (GRID_WIDTH - 2)) + 1,
+                            Math.floor(Math.random() * (GRID_HEIGHT - 2)) + 1
+                        ];
+                        if (snakeHead === null) {
+                            this.position = new_pos;
+                            break;
+                        }
+                        const distance = Math.abs(new_pos[0] - snakeHead[0]) + Math.abs(new_pos[1] - snakeHead[1]);
+                        if (distance >= 6) {
+                            this.position = new_pos;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            move(snakePositions, foodPosition, bombs) {
+                if (!this.active) return;
+
+                if (Math.random() < 0.3) {
+                    this.direction = this.getRandomDirection();
+                }
+
+                const [x, y] = this.direction;
+                const new_x = (this.position[0] + x + GRID_WIDTH) % GRID_WIDTH;
+                const new_y = (this.position[1] + y + GRID_HEIGHT) % GRID_HEIGHT;
+                const new_pos = [new_x, new_y];
+
+                const blockedPositions = new Set();
+                for (const pos of snakePositions) {
+                    blockedPositions.add(pos[0] + ',' + pos[1]);
+                }
+                blockedPositions.add(foodPosition[0] + ',' + foodPosition[1]);
+                for (const bomb of bombs) {
+                    blockedPositions.add(bomb.position[0] + ',' + bomb.position[1]);
+                }
+
+                if (blockedPositions.has(new_pos[0] + ',' + new_pos[1])) {
+                    const validDirections = [];
+                    for (const direction of [UP, DOWN, LEFT, RIGHT]) {
+                        const [dx, dy] = direction;
+                        const test_x = (this.position[0] + dx + GRID_WIDTH) % GRID_WIDTH;
+                        const test_y = (this.position[1] + dy + GRID_HEIGHT) % GRID_HEIGHT;
+                        const test_pos = [test_x, test_y];
+                        if (!blockedPositions.has(test_pos[0] + ',' + test_pos[1])) {
+                            validDirections.push(direction);
+                        }
+                    }
+
+                    if (validDirections.length > 0) {
+                        this.direction = validDirections[Math.floor(Math.random() * validDirections.length)];
+                        const [dx, dy] = this.direction;
+                        const new_x = (this.position[0] + dx + GRID_WIDTH) % GRID_WIDTH;
+                        const new_y = (this.position[1] + dy + GRID_HEIGHT) % GRID_HEIGHT;
+                        this.position = [new_x, new_y];
+                    }
+                } else {
+                    this.position = new_pos;
+                }
+            }
+
+            eat(mouseHole) {
+                this.active = false;
+                // 老鼠被吃掉后，立即从老鼠洞附近重新出现
+                if (mouseHole) {
+                    this.randomizePosition(null, mouseHole);
+                    this.active = true;
+                }
+            }
+
+            render(ctx) {
+                if (!this.active) return;
+                const center_x = this.position[0] * GRID_SIZE + GRID_SIZE / 2;
+                const center_y = this.position[1] * GRID_SIZE + GRID_SIZE / 2;
+                
+                // 根据方向计算头部偏移
+                const [dx, dy] = this.direction;
+                const head_x = center_x + dx * 3;
+                const head_y = center_y + dy * 3;
+                
+                // 画老鼠尾巴（在身体后方）
+                const tail_x = center_x - dx * 5;
+                const tail_y = center_y - dy * 5;
+                const tail_end_x = tail_x - dx * 4 + (dy * 3);
+                const tail_end_y = tail_y - dy * 4 - (dx * 3);
+                ctx.strokeStyle = '#ffc0cb';
+                ctx.lineWidth = 2;
+                ctx.beginPath();
+                ctx.moveTo(tail_x, tail_y);
+                ctx.lineTo(tail_end_x, tail_end_y);
+                ctx.stroke();
+                
+                // 画老鼠身体（灰色椭圆）
+                ctx.fillStyle = '#969696';
+                ctx.beginPath();
+                ctx.ellipse(center_x, center_y, 5, 4, 0, 0, Math.PI * 2);
+                ctx.fill();
+                
+                // 画老鼠头（圆形，在移动方向）
+                ctx.fillStyle = '#b4b4b4';
+                ctx.beginPath();
+                ctx.arc(head_x, head_y, 5, 0, Math.PI * 2);
+                ctx.fill();
+                
+                // 画老鼠耳朵（在头部两侧）
+                const ear1_x = head_x + dy * 3;
+                const ear1_y = head_y - dx * 3;
+                const ear2_x = head_x - dy * 3;
+                const ear2_y = head_y + dx * 3;
+                ctx.fillStyle = '#ffc0cb';
+                ctx.beginPath();
+                ctx.arc(ear1_x, ear1_y, 2, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.beginPath();
+                ctx.arc(ear2_x, ear2_y, 2, 0, Math.PI * 2);
+                ctx.fill();
+                
+                // 画老鼠眼睛（在头部前方）
+                const eye1_x = head_x + dx * 2 + dy * 1.5;
+                const eye1_y = head_y + dy * 2 - dx * 1.5;
+                const eye2_x = head_x + dx * 2 - dy * 1.5;
+                const eye2_y = head_y + dy * 2 + dx * 1.5;
+                ctx.fillStyle = BLACK;
+                ctx.beginPath();
+                ctx.arc(eye1_x, eye1_y, 1, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.beginPath();
+                ctx.arc(eye2_x, eye2_y, 1, 0, Math.PI * 2);
+                ctx.fill();
+                
+                // 画老鼠鼻子（粉色，在头部最前方）
+                const nose_x = head_x + dx * 4;
+                const nose_y = head_y + dy * 4;
+                ctx.fillStyle = '#ff69b4';
+                ctx.beginPath();
+                ctx.arc(nose_x, nose_y, 1, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        // 游戏主函数
+        function startGame(mode) {
+            // 设置游戏模式和胜利条件
+            gameMode = mode;
+            switch(mode) {
+                case 'easy':
+                    winLength = 5;
+                    break;
+                case 'normal':
+                    winLength = 10;
+                    break;
+                case 'hard':
+                    winLength = 20;
+                    break;
+            }
+            
+            // 隐藏模式选择界面，显示游戏区域
+            document.getElementById('mode-selection').style.display = 'none';
+            document.getElementById('game-area').style.display = 'block';
+            
+            // 初始化游戏
+            main();
+        }
+
+        function main() {
+            const canvas = document.getElementById('gameCanvas');
+            const ctx = canvas.getContext('2d');
+
+            const snake = new Snake();
+            const aiSnake = new AISnake();
+            const food = new Food();
+            const bombs = [new Bomb()];
+            bombs[0].randomizePosition(snake.getHeadPosition(), food.position, bombs);
+            const mouseHole = new MouseHole();
+            const mouse = new Mouse();
+            mouse.randomizePosition(snake.getHeadPosition(), mouseHole);
+
+            // AI蛇速度控制（每16帧移动一次，是玩家蛇速度的1/2）
+            let frameCount = 0;
+            const aiSpeed = 16;
+            
+            // 玩家蛇速度控制（每8帧移动一次，让游戏更慢）
+            let playerFrameCount = 0;
+            const playerSpeed = 8;
+            
+            // 游戏状态控制
+            let gameOver = false;
+            let gameWon = false;
+            let restartScheduled = false;
+
+            // 键盘控制
+            const keys = {
+                up: false,
+                down: false,
+                left: false,
+                right: false,
+                q: false
+            };
+
+            document.addEventListener('keydown', (e) => {
+                switch (e.key) {
+                    case 'ArrowUp':
+                        e.preventDefault();
+                        keys.up = true;
+                        snake.turn(UP);
+                        break;
+                    case 'ArrowDown':
+                        e.preventDefault();
+                        keys.down = true;
+                        snake.turn(DOWN);
+                        break;
+                    case 'ArrowLeft':
+                        e.preventDefault();
+                        keys.left = true;
+                        snake.turn(LEFT);
+                        break;
+                    case 'ArrowRight':
+                        e.preventDefault();
+                        keys.right = true;
+                        snake.turn(RIGHT);
+                        break;
+                    case 'q':
+                    case 'Q':
+                        keys.q = true;
+                        break;
+                }
+            });
+
+            // 触控支持
+            let touchStartX = 0;
+            let touchStartY = 0;
+            const minSwipeDistance = 30; // 最小滑动距离
+
+            canvas.addEventListener('touchstart', (e) => {
+                e.preventDefault();
+                const touch = e.touches[0];
+                touchStartX = touch.clientX;
+                touchStartY = touch.clientY;
+            }, { passive: false });
+
+            canvas.addEventListener('touchmove', (e) => {
+                e.preventDefault();
+            }, { passive: false });
+
+            canvas.addEventListener('touchend', (e) => {
+                e.preventDefault();
+                const touch = e.changedTouches[0];
+                const touchEndX = touch.clientX;
+                const touchEndY = touch.clientY;
+                
+                const deltaX = touchEndX - touchStartX;
+                const deltaY = touchEndY - touchStartY;
+                
+                // 判断滑动方向
+                if (Math.abs(deltaX) > Math.abs(deltaY)) {
+                    // 水平滑动
+                    if (Math.abs(deltaX) > minSwipeDistance) {
+                        if (deltaX > 0) {
+                            snake.turn(RIGHT);
+                        } else {
+                            snake.turn(LEFT);
+                        }
+                    }
+                } else {
+                    // 垂直滑动
+                    if (Math.abs(deltaY) > minSwipeDistance) {
+                        if (deltaY > 0) {
+                            snake.turn(DOWN);
+                        } else {
+                            snake.turn(UP);
+                        }
+                    }
+                }
+            }, { passive: false });
+
+            // 游戏循环
+            function gameLoop() {
+                // 处理退出
+                if (keys.q) {
+                    return;
+                }
+
+                // 如果游戏结束或胜利，只渲染不更新游戏逻辑
+                if (!gameOver && !gameWon) {
+                    // 玩家蛇速度控制（每8帧移动一次）
+                    playerFrameCount++;
+                    if (playerFrameCount % playerSpeed === 0) {
+                        snake.move();
+                    }
+                    
+                    // AI蛇每3帧移动一次
+                    frameCount++;
+                    if (frameCount % aiSpeed === 0) {
+                        aiSnake.aiMove(food.position, snake, bombs, mouse);
+                    }
+                    
+                    // 老鼠每8帧移动一次（与玩家蛇速度一致）
+                    if (playerFrameCount % playerSpeed === 0) {
+                        mouse.move(snake.positions, food.position, bombs);
+                    }
+                }
+
+                const headArea = snake.getHeadArea();
+                const aiHeadArea = aiSnake.getHeadArea();
+                
+                // 检查玩家是否吃到食物
+                const foodPosStr = food.position[0] + ',' + food.position[1];
+                for (const pos of headArea) {
+                    if (pos[0] + ',' + pos[1] === foodPosStr) {
+                        if (food.isMushroom) {
+                            snake.width += GRID_SIZE;
+                            mushroomSound();
+                        } else {
+                            snake.length += 1;
+                            appleSound();
+                        }
+                        snake.score += 1;
+                        food.updateType();
+                        food.randomizePosition();
+                        const snakeHead = snake.getHeadPosition();
+                        for (const bomb of bombs) {
+                            bomb.randomizePosition(snakeHead, food.position, bombs);
+                        }
+                        const newBomb = new Bomb();
+                        newBomb.randomizePosition(snakeHead, food.position, bombs);
+                        bombs.push(newBomb);
+                        break;
+                    }
+                }
+
+                // 检查AI蛇是否吃到食物
+                for (const pos of aiHeadArea) {
+                    if (pos[0] + ',' + pos[1] === foodPosStr) {
+                        if (food.isMushroom) {
+                            aiSnake.width += GRID_SIZE;
+                        } else {
+                            aiSnake.length += 1;
+                        }
+                        aiSnake.score += 1;
+                        food.updateType();
+                        food.randomizePosition();
+                        const snakeHead = snake.getHeadPosition();
+                        for (const bomb of bombs) {
+                            bomb.randomizePosition(snakeHead, food.position, bombs);
+                        }
+                        const newBomb = new Bomb();
+                        newBomb.randomizePosition(snakeHead, food.position, bombs);
+                        bombs.push(newBomb);
+                        break;
+                    }
+                }
+
+                // 检查玩家是否吃到老鼠
+                const mousePosStr = mouse.position[0] + ',' + mouse.position[1];
+                if (mouse.active) {
+                    for (const pos of headArea) {
+                        if (pos[0] + ',' + pos[1] === mousePosStr) {
+                            snake.width = Math.max(GRID_SIZE, snake.width - GRID_SIZE);
+                            mouseSound();
+                            mouse.eat(mouseHole);
+                            break;
+                        }
+                    }
+                }
+
+                // 检查玩家蛇是否撞到炸弹
+                const bombsToRemove = [];
+                for (const bomb of bombs) {
+                    const bombPosStr = bomb.position[0] + ',' + bomb.position[1];
+                    for (const pos of headArea) {
+                        if (pos[0] + ',' + pos[1] === bombPosStr) {
+                            bombSound();
+                            bombsToRemove.push(bomb);
+                            // 缩短蛇的长度（减少3节）
+                            snake.length = Math.max(0, snake.length - 3);
+                            // 移除蛇尾的位置
+                            for (let i = 0; i < Math.min(3, snake.positions.length); i++) {
+                                if (snake.positions.length > 0) {
+                                    snake.positions.pop();
+                                }
+                            }
+                            // 如果长度变为0，蛇死亡
+                            if (snake.length <= 0 || snake.positions.length === 0) {
+                                gameOver = true;
+                                // 只设置一次定时器
+                                if (!restartScheduled) {
+                                    restartScheduled = true;
+                                    setTimeout(() => {
+                                        // 返回到模式选择界面
+                                        document.getElementById('game-area').style.display = 'none';
+                                        document.getElementById('mode-selection').style.display = 'flex';
+                                        gameOver = false;
+                                        restartScheduled = false;
+                                    }, 5000);
+                                }
+                                break;
+                            }
+                        }
+                    }
+                    // 如果游戏结束，停止检查其他炸弹
+                    if (gameOver) {
+                        break;
+                    }
+                    
+                    // 检查AI蛇是否撞到炸弹
+                    for (const pos of aiHeadArea) {
+                        if (pos[0] + ',' + pos[1] === bombPosStr) {
+                            bombsToRemove.push(bomb);
+                            aiSnake.length = Math.max(0, aiSnake.length - 3);
+                            for (let i = 0; i < Math.min(3, aiSnake.positions.length); i++) {
+                                if (aiSnake.positions.length > 0) {
+                                    aiSnake.positions.pop();
+                                }
+                            }
+                            if (aiSnake.length <= 0 || aiSnake.positions.length === 0) {
+                                aiSnake.reset();
+                            }
+                        }
+                    }
+                }
+                
+                // 移除被碰到的炸弹
+                for (const bomb of bombsToRemove) {
+                    const index = bombs.indexOf(bomb);
+                    if (index > -1) {
+                        bombs.splice(index, 1);
+                    }
+                }
+
+                // 渲染
+                ctx.fillStyle = BLACK;
+                ctx.fillRect(0, 0, WIDTH, HEIGHT);
+                mouseHole.render(ctx);
+                snake.render(ctx);
+                aiSnake.render(ctx);
+                food.render(ctx);
+                mouse.render(ctx);
+                for (const bomb of bombs) {
+                    bomb.render(ctx);
+                }
+
+                // 显示分数
+                ctx.fillStyle = WHITE;
+                ctx.font = '24px Arial';
+                ctx.textAlign = 'left';
+                ctx.fillText(`Score: ${snake.score}  AI: ${aiSnake.score}`, 10, 30);
+
+                // 检查胜利条件
+                if (snake.length > winLength) {
+                    gameWon = true;
+                }
+                
+                // 在最上层显示游戏结束或胜利信息
+                if (gameWon) {
+                    // 画一个半透明的背景框
+                    ctx.fillStyle = 'rgba(0, 0, 0, 0.8)';
+                    ctx.fillRect(WIDTH / 2 - 200, HEIGHT / 2 - 80, 400, 160);
+                    
+                    // 画边框
+                    ctx.strokeStyle = GREEN;
+                    ctx.lineWidth = 4;
+                    ctx.strokeRect(WIDTH / 2 - 200, HEIGHT / 2 - 80, 400, 160);
+                    
+                    // 显示文字
+                    ctx.fillStyle = GREEN;
+                    ctx.font = 'bold 72px Arial';
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'middle';
+                    ctx.fillText('You Win!', WIDTH / 2, HEIGHT / 2);
+                    ctx.textBaseline = 'alphabetic';
+                    
+                    // 只设置一次定时器
+                    if (!restartScheduled) {
+                        restartScheduled = true;
+                        setTimeout(() => {
+                            // 返回到模式选择界面
+                            document.getElementById('game-area').style.display = 'none';
+                            document.getElementById('mode-selection').style.display = 'flex';
+                            gameWon = false;
+                            restartScheduled = false;
+                        }, 5000);
+                    }
+                }
+                
+                if (gameOver) {
+                    // 画一个半透明的背景框
+                    ctx.fillStyle = 'rgba(0, 0, 0, 0.8)';
+                    ctx.fillRect(WIDTH / 2 - 200, HEIGHT / 2 - 80, 400, 160);
+                    
+                    // 画边框
+                    ctx.strokeStyle = RED;
+                    ctx.lineWidth = 4;
+                    ctx.strokeRect(WIDTH / 2 - 200, HEIGHT / 2 - 80, 400, 160);
+                    
+                    // 显示文字
+                    ctx.fillStyle = RED;
+                    ctx.font = 'bold 72px Arial';
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'middle';
+                    ctx.fillText('You Lose!', WIDTH / 2, HEIGHT / 2);
+                    ctx.textBaseline = 'alphabetic';
+                }
+
+                requestAnimationFrame(gameLoop);
+            }
+
+            // 开始游戏循环
+            gameLoop();
+        }
+
+        // 启动游戏（页面加载时不自动开始，等待用户选择模式）
+        // window.addEventListener('load', main); // 已注释，等待用户选择模式
+    </script>
 </body>
 </html>
-
